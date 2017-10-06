@@ -16,3 +16,6 @@ export const SELECT_FORM = 'SELECT_FORM';
 /* FORM ACTIONS */
 export const LOAD_FORMS = 'LOAD_FORMS';
 export const SAVE_FORM = 'SAVE_FORM';
+
+/* RULE ACTIONS */
+export const LOAD_RULES = 'LOAD_RULES';

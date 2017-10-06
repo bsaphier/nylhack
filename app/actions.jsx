@@ -57,3 +57,9 @@ export const loadForms = (forms) => ({
     type: actions.LOAD_FORMS,
     forms
 });
+
+/* RULES ACTION CREATORS */
+export const loadRules = (rules) => ({
+    type: actions.LOAD_RULES,
+    rules
+});

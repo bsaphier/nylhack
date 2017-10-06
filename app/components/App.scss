@@ -7,8 +7,38 @@
 }
 
 .mainContentWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     text-align: center;
     font-size: 60px;
+}
+
+.contentBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contentWrapper {
+    border: #ccc solid 2px;
+    border-radius: 2px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    margin: 20px;
+    width: 20vw;
+    height: 38vh;
+    font-size: 2rem;
+    .btn {
+        cursor: pointer;
+        margin: 5px;
+        border: #ddd solid 1px;
+        border-radius: 1px;
+        min-width: 160px;
+        &:hover {
+            background-color: #ddd;
+        }
+    }
 }
