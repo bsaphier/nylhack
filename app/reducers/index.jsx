@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import layoutReducer from './layout.jsx';
-import formsReducer from './forms.jsx';
+import formsRulesReducer from './forms-rules-map.jsx';
 
 const rootReducer = combineReducers({
     layout: layoutReducer,
-    forms: formsReducer,
+    forms: formsRulesReducer,
 });
 
 export default rootReducer;
