@@ -5,15 +5,26 @@ import * as scss from './App.scss';
 // import Navbar from './Navbar';
 // import Footer from './Footer';
 
-const App = ({ sayHi, message }) => (
-    <div id="main" className={scss.mainContentWrapper}>
-        {/* <Navbar /> */}
-        {message}
-        <br />
-        <input onChange={sayHi} />
-        {/* <Footer /> */}
-    </div>
-);
+
+class App extends React.Component {
+
+    componentDidMount() {
+        this.props.onLoad(window);
+    }
+
+    render() {
+        const { sayHi, message } = this.props;
+        return (
+            <div id="main" className={scss.mainContentWrapper}>
+                {/* <Navbar /> */}
+                { message }
+                <br />
+                <input onChange={sayHi} />
+                {/* <Footer /> */}
+            </div>
+        );
+    }
+}
 
 
 const mapState = state => ({
@@ -21,7 +32,8 @@ const mapState = state => ({
 });
 
 const mapDispatch = dispatch => ({
-    sayHi: event => dispatch(actions.sayHello(event.target.value))
+    sayHi: event => dispatch(actions.sayHello(event.target.value)),
+    onLoad: window => dispatch(actions.getView(window))
 });
 
 export default connect(mapState, mapDispatch)(App);
