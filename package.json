@@ -1,7 +1,7 @@
 {
-  "name": "nyl-hack",
+  "name": "nylhack",
   "version": "0.0.1",
-  "description": "New York Life Hackathon - Track 3: Reimagining forms",
+  "description": "NYLH - Track 3: Reimagining forms",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.config.dev.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bsaphier/NYL-hack.git"
+    "url": "git+https://github.com/bsaphier/track3hack.git"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
