@@ -1,23 +1,23 @@
-import * as actionTypes from './constants.jsx';
+import * as actions from './constants.jsx';
 import { getSizes } from './utils';
 
 
-/* LAYOUT ACTIONS */
+/* LAYOUT ACTION CREATORS */
 export const sayHello = msg => ({
-    type: actionTypes.SAY_HELLO,
+    type: actions.SAY_HELLO,
     message: msg
 });
 
 export const openBurger = () => ({
-    type: actionTypes.OPEN_BURGER,
+    type: actions.OPEN_BURGER,
 });
 
 export const closeBurger = () => ({
-    type: actionTypes.CLOSE_BURGER
+    type: actions.CLOSE_BURGER
 });
 
 export const resize = ({ dimensions, orientation }) => ({
-    type: actionTypes.RESIZE,
+    type: actions.RESIZE,
     dimensions,
     orientation
 });
@@ -29,3 +29,31 @@ export const getView = (window) => dispatch => {
         orientation
     }));
 };
+
+
+/* FORM-RULE ACTION CREATORS */
+export const selectForm = (form) => ({
+    type: actions.SELECT_FORM,
+    form
+});
+
+export const addRule = (rule) => ({
+    type: actions.ADD_RULE,
+    rule
+});
+
+export const editRule = (rule) => ({
+    type: actions.EDIT_RULE,
+    rule
+});
+
+export const removeRule = (ruleId) => ({
+    type: actions.REMOVE_RULE,
+    ruleId
+});
+
+/* FORMS ACTION CREATORS */
+export const loadForms = (forms) => ({
+    type: actions.LOAD_FORMS,
+    forms
+});
