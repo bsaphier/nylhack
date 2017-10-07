@@ -1,10 +1,10 @@
-export const getSizes = (window) => {
-  const canUseDOM = typeof window !== 'undefined';
+export const getSizes = (_window) => {
+  const canUseDOM = typeof _window !== 'undefined';
 
   return {
-    width: canUseDOM ? window.innerWidth : null,
-    height: canUseDOM ? window.innerHeight : null,
-    orientation: canUseDOM ? window.screen.orientation.type : null,
+    width: canUseDOM ? _window.innerWidth : null,
+    height: canUseDOM ? _window.innerHeight : null,
+    orientation: canUseDOM ? _window.screen.orientation.type : null,
     canUseDOM,
   }
 }

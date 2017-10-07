@@ -2,7 +2,7 @@ import * as actionTypes from '../constants.jsx';
 
 
 const INIT_STATE = {
-    message: 'Hellooooo',
+    message: 'NYL Hackathon',
     client: {
         dimensions: { width: 0, height: 0 },
         orientation: 'landscape'

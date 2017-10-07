@@ -17,7 +17,7 @@ module.exports = merge(common, {
                     sourceMap: true,
                     camelCase: true,
                     modules: true,
-                    localIdentName: '[name]__[hash:base64:3]'
+                    localIdentName: '[name]__[hash:base64:5]'
                 }
             }, {
                 loader: 'sass-loader',
