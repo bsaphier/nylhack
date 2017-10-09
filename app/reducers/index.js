@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import layoutReducer from './layout.jsx';
+import layout from './layout';
+import wizard from './wizard';
 
 const rootReducer = combineReducers({
-    layout: layoutReducer
+    layout,
+    wizard
 });
 
 export default rootReducer;

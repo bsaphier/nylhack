@@ -1,48 +1,66 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+@import url('/fonts/Alda_Pro');
+@import url('/fonts/EffraPro_V1');
+
+$nyl-blue: #0079c2;
+$nyl-blue-lgt: #42b8fb;
+$nyl-grey-drk: rgb(83, 84, 85);
+$nyl-grey-lgt: rgb(149, 152, 154);
 
 $lighterBlue: #c6eafe;
 $lightBlue: #53A0D4;
 $brightBlue: #42b8fb;
 $nylBlue: #007ac3;
 
+
 * {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
+  font-family: 'Effra Pro', sans-serif;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
 }
 
-// input {
-//     border-color: $lighterBlue;
-//     border-style: dotted;
-//     border-radius: 3px;
-//     border-width: 1px;
-//     padding: 5px;
-//     &:focus {
-//         outline: none;
-//         border-color: $brightBlue;
-//     }
-// }
-
-.mainContentWrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    text-align: center;
-    font-size: 60px;
+body {
+  margin: 0;
 }
 
-.contentBox {
-    display: block;
-    input, textarea {
-        color: $nylBlue;
-        caret-color: $lightBlue;
-        font-size: inherit;
-        font-weight: 200;
-        font-style: italic;
-        margin: 10px;
-        text-align: center;
-    }
+// Default NYL Font
+.effra {
+  font-family: 'Effra Pro', sans-serif;
+}
+// Secondary NYL Font
+.alda {
+  font-family: 'Alda Pro', serif;
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  align-items: stretch;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+.page {
+  position: relative;
+  width: 100%;
+  padding: 120px 0;
+  overflow: hidden;
+  &.firstPage {
+    padding-top: 0;
+  }
+}
+
+.pageContent {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 1192px;
+  // padding: 0 48px;
+  padding: 0;
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  font-size: 1rem;
 }

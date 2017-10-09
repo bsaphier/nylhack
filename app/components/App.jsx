@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../actions.jsx';
-import * as scss from './App.scss';
+import * as actions from '../actions';
+import * as s from './app.scss';
+import Wizard from './Wizard.jsx';
 
 
 class App extends React.Component {
@@ -16,11 +17,14 @@ class App extends React.Component {
     }
 
     render() {
-        const { sayHi, message } = this.props;
+        const { message } = this.props;
         return (
-            <div id="main" className={scss.mainContentWrapper}>
-                <div className={scss.contentBox}>
-                    <input onChange={sayHi} value={message} />
+            <div id="main" className={s.container}>
+                <div className={`${s.page} ${s.firstPage}`}>
+                    <div className={s.pageContent}>
+                        {/* <input onChange={sayHi} value={message} /> */}
+                        <Wizard />
+                    </div>
                 </div>
             </div>
         );
@@ -28,12 +32,9 @@ class App extends React.Component {
 }
 
 
-const mapState = state => ({
-    message: state.layout.message
-});
+const mapState = state => ({ ...state });
 
 const mapDispatch = dispatch => ({
-    sayHi: event => dispatch(actions.sayHello(event.target.value)),
     onLoad: window => dispatch(actions.getView(window)),
     onResize: $event => dispatch(actions.getView($event.target))
 });

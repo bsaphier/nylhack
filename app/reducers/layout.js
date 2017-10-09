@@ -1,8 +1,7 @@
-import * as actionTypes from '../constants.jsx';
+import * as actionTypes from '../constants';
 
 
 const INIT_STATE = {
-    message: 'NYL Hackathon',
     client: {
         dimensions: { width: 0, height: 0 },
         orientation: 'landscape'
@@ -15,11 +14,7 @@ const INIT_STATE = {
 export default (state = INIT_STATE, action) => {
     const nextState = { ...state };
     switch (action.type) {
-
-        case actionTypes.SAY_HELLO:
-            nextState.message = action.message;
-            return nextState;
-
+        
         case actionTypes.RESIZE:
             const { dimensions, orientation } = action;
             nextState.client = { dimensions, orientation };

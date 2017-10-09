@@ -5,4 +5,8 @@ export const CLOSE_BURGER = 'CLOSE_BURGER';
 export const APP_LOADED = 'APP_LOADED';
 export const RESIZE = 'RESIZE';
 
-export const SAY_HELLO = 'SAY_HELLO';
+
+
+/* WIZARD ACTIONS */
+export const WIZARD_PAGE = 'WIZARD_PAGE';
+export const WIZARD_ANSWER_Q = 'WIZARD_ANSWER_Q';

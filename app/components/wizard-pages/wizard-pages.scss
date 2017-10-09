@@ -1,0 +1,48 @@
+$nyl-blue: #0079c2;
+$nyl-blue-lgt: #42b8fb;
+$nyl-grey-drk: rgb(83, 84, 85);
+$nyl-grey-lgt: rgb(149, 152, 154);
+
+$lighterBlue: #c6eafe;
+$lightBlue: #53A0D4;
+$brightBlue: #42b8fb;
+$nylBlue: #007ac3;
+
+
+$nylBlueAlt: #0A9CFD;
+$nylGreyAlt: #9FA19E;
+
+
+.wizardPage {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    width: 100%;
+    overflow: scroll;
+    .iconWrap {
+        width: 30%;
+        .icon {
+            padding-left: 5rem;
+            width: 13rem;
+        }
+    }
+}
+
+.wizardPageAlt {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    padding: 20vh 60px;
+    height: calc((100vh / 12) * 11);
+    overflow: scroll;
+}
+
+.displayName {
+    margin: 0 auto 0 0;
+}
+
+.displayNameAlt {
+    margin: auto;
+}

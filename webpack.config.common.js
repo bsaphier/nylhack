@@ -9,6 +9,29 @@ module.exports = {
     context: __dirname,
     module: {
         rules: [{
+            test: /\.css$/,
+            use: [{
+                loader: 'style-loader'
+            }, {
+                loader: 'css-loader'
+            }]
+        }, {
+            test: /\.svg$/,
+            exclude: /(node_modules)/,
+            use: [
+                {
+                    loader: 'react-svg-loader',
+                    options: {
+                        svgo: {
+                            plugins: [
+                                { removeTitle: false }
+                            ],
+                            floatPrecision: 2
+                        }
+                    }
+                }
+            ]
+        }, {
             test: /jsx?$/,
             exclude: /(node_modules)/,
             use: {
