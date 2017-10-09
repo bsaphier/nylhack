@@ -35,7 +35,7 @@ const mapState = state => ({
 const mapDispatch = dispatch => ({
     sayHi: event => dispatch(actions.sayHello(event.target.value)),
     onLoad: window => dispatch(actions.getView(window)),
-    onResize: $event => dispatch(actions.onResize($event))
+    onResize: $event => dispatch(actions.getView($event.target))
 });
 
 export default connect(mapState, mapDispatch)(App);

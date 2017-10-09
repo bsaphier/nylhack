@@ -23,18 +23,14 @@ export const resize = ({ dimensions, orientation }) => ({
 });
 
 
-export const onResize = ({ target }) => dispatch => {
-    const { width, height, orientation } = getSizes(target);
-    dispatch(resize({
-        dimensions: {width, height},
-        orientation
-    }));
-};
-
-export const getView = (window) => dispatch => {
-    const { width, height, orientation } = getSizes(window);
-    dispatch(resize({
-        dimensions: {width, height},
-        orientation
-    }));
+export const getView = (_window) => dispatch => {
+    dispatch(resize(
+        {
+            dimensions: {
+                width: _window.innerWidth,
+                height: _window.innerHeight
+            },
+            orientation: _window.screen.orientation.type
+        }
+    ));
 };

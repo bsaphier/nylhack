@@ -12,17 +12,17 @@ $nylBlue: #007ac3;
     -webkit-font-smoothing: antialiased;
 }
 
-input {
-    border-color: $lighterBlue;
-    border-style: dotted;
-    border-radius: 3px;
-    border-width: 1px;
-    padding: 5px;
-    &:focus {
-        outline: none;
-        border-color: $brightBlue;
-    }
-}
+// input {
+//     border-color: $lighterBlue;
+//     border-style: dotted;
+//     border-radius: 3px;
+//     border-width: 1px;
+//     padding: 5px;
+//     &:focus {
+//         outline: none;
+//         border-color: $brightBlue;
+//     }
+// }
 
 .mainContentWrapper {
     position: fixed;
