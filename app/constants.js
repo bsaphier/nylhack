@@ -8,5 +8,6 @@ export const RESIZE = 'RESIZE';
 
 
 /* WIZARD ACTIONS */
+export const FOUND_FORM = 'FOUND_FORM';
 export const WIZARD_PAGE = 'WIZARD_PAGE';
 export const WIZARD_ANSWER_Q = 'WIZARD_ANSWER_Q';

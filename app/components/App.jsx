@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import * as s from './app.scss';
 import Wizard from './Wizard.jsx';
+import Footer from './Footer.jsx';
 
 
 class App extends React.Component {
@@ -20,12 +21,10 @@ class App extends React.Component {
         const { message } = this.props;
         return (
             <div id="main" className={s.container}>
-                <div className={`${s.page} ${s.firstPage}`}>
-                    <div className={s.pageContent}>
-                        {/* <input onChange={sayHi} value={message} /> */}
-                        <Wizard />
-                    </div>
+                <div className={s.pageContent}>
+                    <Wizard />
                 </div>
+                <Footer />
             </div>
         );
     }

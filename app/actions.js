@@ -1,5 +1,5 @@
 import * as actionTypes from './constants';
-import { getSizes } from './utils';
+import * as utils from './utils';
 
 
 /* LAYOUT ACTION CREATORS */
@@ -47,4 +47,13 @@ export const answerQuestion = answer => ({
 export const selectAnswer = (currentPage, answer) => dispatch => {
     dispatch(changePage(++currentPage));
     dispatch(answerQuestion(answer));
+};
+
+export const foundForm = form => ({
+    type: actionTypes.FOUND_FORM,
+    form
+});
+
+export const getForm = (answers) => dispatch => {
+    dispatch(foundForm(utils.fireRuleForForm(answers)));
 };

@@ -12,6 +12,15 @@ $nylBlue: #007ac3;
 $nylBlueAlt: #0A9CFD;
 $nylGreyAlt: #9FA19E;
 
+p {
+    font-family: inherit;
+    font-style: inherit;
+    span {
+        font-family: inherit;
+        font-weight: 900;
+        font-size: 1.62em;
+    }
+}
 
 .wizardPage {
     display: flex;
@@ -45,4 +54,10 @@ $nylGreyAlt: #9FA19E;
 
 .displayNameAlt {
     margin: auto;
+}
+
+.message {
+    font-family: 'Alda';
+    font-size: 5rem;
+    width: 100%;
 }

@@ -1,39 +1,43 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../actions';
 import * as Btns from './buttons';
 import * as Pages from './wizard-pages';
 import * as s from './wizard.scss';
 
-class Wizard extends Component {
-    render() {
-        const { page, questions, changePage, selectAnswer } = this.props;
-        return (
-            <div className={s.wizardWrapper}>
-                {page === 1 && <Pages.PageOne action={selectAnswer} currPage={page} question={questions[0]} />}
-                {page === 2 && <Pages.PageTwo action={selectAnswer} currPage={page} question={questions[1]} />}
-                {page === 3 && <Pages.PageThree action={selectAnswer} currPage={page} question={questions[2]} />}
-                <div className={s.wizardFooter}>
-                    <div className={s.iconBtn} onClick={() => changePage(page - 1)}>
-                        <img className={s.icon} src={`./icons/back-01.svg`} />
-                    </div>
-                    <div className={s.iconBtn} onClick={() => console.log('We havent built this functionality yet.')}>
-                        <img className={s.icon} src={`./icons/Menu.svg`} />
-                    </div>
-                    {/* <Btns.NextBtn action={() => changePage(page - 1)}>Prev</Btns.NextBtn> */}
-                    {/* <Btns.NextBtn action={() => changePage(page + 1)}>Next</Btns.NextBtn> */}
-                </div>
+
+const Wizard = ({form, page, getForm, questions, changePage, selectAnswer }) => {
+    const answers = {
+        answer1: questions[0].answer,
+        answer2: questions[1].answer,
+        answer3: questions[2].answer
+    };
+    return (
+        <div className={s.wizardWrapper}>
+            <div className={`${s.carousel} ${s['page1Pos' + page]}`}>
+                <Pages.PageOne action={selectAnswer} currPage={page} question={questions[0]} />
             </div>
-        );
-    }
-}
+            <div className={`${s.carousel} ${s['page2Pos' + page]}`}>
+                <Pages.PageTwo action={selectAnswer} currPage={page} question={questions[1]} />
+            </div>
+            <div className={`${s.carousel} ${s['page3Pos' + page]}`}>
+                <Pages.PageThree action={selectAnswer} currPage={page} question={questions[2]} />
+            </div>
+            <div className={`${s.carousel} ${s['page4Pos' + page]}`}>
+                <Pages.PageFour action={() => getForm(answers)} currPage={page} answers={questions} form={form} />
+            </div>
+        </div>
+    )
+};
 
 const mapState = state => ({
+    form: state.wizard.form,
     page: state.wizard.page,
     questions: state.wizard.questions
 });
 
 const mapDispatch = dispatch => ({
+    getForm: answers => dispatch(actionCreators.getForm(answers)),
     changePage: page => dispatch(actionCreators.changePage(page)),
     selectAnswer: (page, answer) => dispatch(actionCreators.selectAnswer(page, answer))
 });

@@ -1,31 +1,35 @@
 import * as actionTypes from '../constants';
 
-const Q_TYPES = {
-    dropdown: 'ENUM/DROPDOWN'
-};
+
+const POSSIBLE_ANSWERS_STEP_1 = ['Update beneficiary', 'Update Address', 'Request Loan', 'Update Payment Type', 'Cancel Policy', 'Claim', 'Other'];
+const POSSIBLE_ANSWERS_STEP_2 = ['Life Insurance', 'Annuity', 'Mutual Fund', 'Other'];
+const POSSIBLE_ANSWERS_STEP_3 = ['Individual', 'Trust'];
+
 
 const INIT_STATE = {
     page: 1,
-    lastPage: 3,
+    lastPage: 4,
     questions: [
         {
             id: 'A0',
-            values: ['Update beneficiary', 'Update Address', 'Request Loan', 'Update Payment Type', 'Cancel Policy', 'Claim', 'Other'],
-            type: Q_TYPES.dropdown,
+            required: true,
+            values: POSSIBLE_ANSWERS_STEP_1,
             answer: ''
         }, {
             id: 'B1',
-            values: ['Life Insurance', 'Annuity', 'Mutual Fund', 'Other'],
-            type: Q_TYPES.dropdown,
+            required: true,
+            values: POSSIBLE_ANSWERS_STEP_2,
             answer: ''
         }, {
             id: 'C2',
-            values: ['Individual', 'Trust'],
-            type: Q_TYPES.dropdown,
+            required: true,
+            values: POSSIBLE_ANSWERS_STEP_3,
             answer: ''
         }
-    ]
+    ],
+    form: undefined // {name: string; link: string;} 
 };
+
 
 export default (state = INIT_STATE, action) => {
     const nextState = { ...state };
@@ -40,6 +44,8 @@ export default (state = INIT_STATE, action) => {
             } else {
                 nextState.page = action.page;
             }
+            // reset the form
+            nextState.form = undefined;
             return nextState;
 
         case actionTypes.WIZARD_ANSWER_Q: 
@@ -51,6 +57,10 @@ export default (state = INIT_STATE, action) => {
                     return q;
                 }
             );
+            return nextState;
+
+        case actionTypes.FOUND_FORM:
+            nextState.form = action.form;
             return nextState;
 
         default:
