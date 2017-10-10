@@ -4,7 +4,8 @@
   "description": "NYLH - Track 3: Reimagining forms",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.config.dev.js",
+    "start": "webpack-dev-server --open --config webpack.config.dev.js --host 0.0.0.0",
+    "build-dev": "webpack --config webpack.config.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
