@@ -1,0 +1,24 @@
+==Release notes_Effra Pro==
+
+Compiler of release notes: Dalton Maag
+Designer: Dalton Maag
+Designer URL: daltonmaag.com
+
+Date of creation: 2016-06-17
+
+Changes since previous release:
+- changed the family name from NYLIC Effra to Effra Pro
+
+Basic information 
+1 Font name: Effra Pro
+2 TrueType Version record: 1.001
+3 Regional package: Latin
+4 Supported scripts: Latin
+5 Number of glyphs: 486
+6 Weights/Styles: Regular, Regular Italic, Bold, Bold Italic
+7 Usage: Text and Display
+
+Technology 
+1 File formats: The files have been delivered in the TrueType-based OpenType format, for use in all major Operating Systems.
+2 Embedding settings: Print and preview of the document is allowed (print and preview mode); subsetting is allowed.
+3 Default numerals: Tabular. Proportional figures accessible via OpenType features.
