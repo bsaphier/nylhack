@@ -9,12 +9,12 @@ import Footer from './Footer.jsx';
 class App extends React.Component {
 
     componentDidMount() {
-        this.props.onLoad(window);
-        window.addEventListener('resize', this.props.onResize);
+        // this.props.onLoad(window);
+        // window.addEventListener('resize', this.props.onResize);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('resize', this.props.onResize);
+        // window.removeEventListener('resize', this.props.onResize);
     }
 
     render() {
@@ -34,8 +34,8 @@ class App extends React.Component {
 const mapState = state => ({ ...state });
 
 const mapDispatch = dispatch => ({
-    onLoad: window => dispatch(actions.getView(window)),
-    onResize: $event => dispatch(actions.getView($event.target))
+    // onLoad: window => dispatch(actions.getView(window)),
+    // onResize: $event => dispatch(actions.getView($event.target))
 });
 
 export default connect(mapState, mapDispatch)(App);

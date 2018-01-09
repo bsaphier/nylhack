@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import layout from './layout';
+// import layout from './layout';
 import wizard from './wizard';
 
 const rootReducer = combineReducers({
-    layout,
+    // layout,
     wizard
 });
 
