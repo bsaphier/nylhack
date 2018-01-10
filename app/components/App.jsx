@@ -8,14 +8,14 @@ import Footer from './Footer.jsx';
 
 class App extends React.Component {
 
-    componentDidMount() {
+    // componentDidMount() {
         // this.props.onLoad(window);
         // window.addEventListener('resize', this.props.onResize);
-    }
+    // }
 
-    componentWillUnmount() {
+    // componentWillUnmount() {
         // window.removeEventListener('resize', this.props.onResize);
-    }
+    // }
 
     render() {
         const { message } = this.props;
